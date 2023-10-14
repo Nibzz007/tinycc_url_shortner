@@ -7,5 +7,7 @@ class AppSize {
   static const SizedBox kHeight30 = SizedBox(height: 30);
   static const SizedBox kHeight50 = SizedBox(height: 50);
   static const SizedBox kHeight80 = SizedBox(height: 80);
+  static const SizedBox kHeight120 = SizedBox(height: 120);
+
 
 }
