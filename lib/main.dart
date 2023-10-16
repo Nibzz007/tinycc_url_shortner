@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinycc_app/view/splash_view/splash_screen.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -11,9 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width; 
-
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,

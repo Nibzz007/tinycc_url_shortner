@@ -48,7 +48,9 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OutlinedButtonWidget(text: 'Login',),
+                  OutlinedButtonWidget(
+                    text: 'Login',
+                  ),
                 ],
               ),
               AppSize.kHeight10,
@@ -64,9 +66,7 @@ class LoginScreen extends StatelessWidget {
               AppSize.kHeight10,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OutlinedButtonWidget(text: 'Login with OTP')
-                ],
+                children: [OutlinedButtonWidget(text: 'Login with OTP')],
               ),
               AppSize.kHeight20,
               Row(

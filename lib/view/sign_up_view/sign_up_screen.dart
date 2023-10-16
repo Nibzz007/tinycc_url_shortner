@@ -33,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
           ),
           AppSize.kHeight10,
           Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 30, right: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -86,22 +86,22 @@ class SignUpScreen extends StatelessWidget {
                   style: TextStyle(color: AppColor.kWhite),
                 ),
                 TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      'Log in',
-                      style: TextStyle(
-                        color: AppColor.kBlue,
-                        decoration: TextDecoration.underline,
-                        decorationColor: AppColor.kBlue,
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
                       ),
+                    );
+                  },
+                  child: const Text(
+                    'Log in',
+                    style: TextStyle(
+                      color: AppColor.kBlue,
+                      decoration: TextDecoration.underline,
+                      decorationColor: AppColor.kBlue,
                     ),
                   ),
+                ),
               ],
             ),
           )
