@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "282612801126",
+    "project_id": "tinycc-url-shortner",
+    "storage_bucket": "tinycc-url-shortner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282612801126:android:cb12010c491fd8221617a7",
+        "android_client_info": {
+          "package_name": "com.example.tinycc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6rx5YG4pyQO8emQIdYtXgmNSryviVQT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

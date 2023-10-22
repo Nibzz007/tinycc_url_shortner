@@ -4,6 +4,7 @@ import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
 import 'package:tinycc_app/utils/constants/style.dart';
 import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
+import 'package:tinycc_app/view/home_view/home_screen.dart';
 import 'package:tinycc_app/view/login_view/login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class SignUpScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppSize.kHeight10,
+          AppSize.kHeight20,
           Row(
             children: [
               IconButton(
@@ -28,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
                   color: AppColor.kWhite,
                 ),
                 iconSize: 18,
-              )
+              ),
             ],
           ),
           AppSize.kHeight10,
@@ -68,16 +69,26 @@ class SignUpScreen extends StatelessWidget {
           ),
           AppSize.kHeight50,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
               children: [
-                OutlinedButtonWidget(text: 'Sign Up'),
+                OutlinedButtonWidget(
+                  text: 'Sign Up',
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                        (route) => false);
+                  },
+                ),
               ],
             ),
           ),
           AppSize.kHeight30,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
