@@ -3,8 +3,8 @@ import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
 import 'package:tinycc_app/utils/constants/style.dart';
 import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
+import 'package:tinycc_app/view/home_view/home_screen.dart';
 import 'package:tinycc_app/view/sign_up_view/sign_up_screen.dart';
-
 import '../../utils/common_widgets/outline_input_button_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: AppColor.kBlack,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,6 +50,14 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   OutlinedButtonWidget(
                     text: 'Login',
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -66,7 +74,12 @@ class LoginScreen extends StatelessWidget {
               AppSize.kHeight10,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [OutlinedButtonWidget(text: 'Login with OTP')],
+                children: [
+                  OutlinedButtonWidget(
+                    text: 'Login with OTP',
+                    onPressed: () {},
+                  ),
+                ],
               ),
               AppSize.kHeight20,
               Row(
