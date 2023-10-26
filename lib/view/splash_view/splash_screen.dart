@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinycc_app/network_service/network_api_services.dart';
 import 'package:tinycc_app/view/login_view/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,6 +12,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    NetworkApiServices a = NetworkApiServices();
+    a.getAccountDetails();
     goToHome(context);
     super.initState();
   }
