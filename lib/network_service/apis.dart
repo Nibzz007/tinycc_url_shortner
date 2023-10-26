@@ -1,6 +1,6 @@
 class Apis {
   // Base Url
-  static const baseUrl = " https://tiny.cc/tiny/api/3/";
+  static const baseUrl = "https://tiny.cc/tiny/api/3/";
 
   // Endpoints
   static const getAccountDetails = "${baseUrl}account"; // GET
