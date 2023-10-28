@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     NetworkApiServices a = NetworkApiServices();
-    a.getAccountDetails();
+    a.readUrl();
     goToHome(context);
     super.initState();
   }
