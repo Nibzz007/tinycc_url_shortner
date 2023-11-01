@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:tinycc_app/model/account_model.dart';
 import 'package:tinycc_app/model/create_url_model.dart';
+import 'package:tinycc_app/model/delete_single_url.dart';
 import 'package:tinycc_app/model/read_url_model.dart';
 import 'package:tinycc_app/network_service/apis.dart';
 import 'package:tinycc_app/network_service/base_api_services.dart';
@@ -49,18 +50,22 @@ class NetworkApiServices extends BaseApiServices {
   @override
   Future<CreateUrlModel?> createUrl() async {
     Uri url = Uri.parse(Apis.createUrl);
-    final response = await http.post(
+    final response = await http.post(url, headers: {
+      'Authorization':
+          'Basic bmlidTo1MzliZGRjNy1hY2VmLTRjYWMtOTRiNy04NjRlZThhNjY5YTU=',
+    }, body: {});
+    if (response.statusCode == 200) {}
+  }
+
+  @override
+  Future<DeleteSingleUrlModel?> deleteUrl() async {
+    Uri url = Uri.parse(Apis.deleteSingleUrl);
+    final response = await http.delete(
       url,
       headers: {
         'Authorization':
             'Basic bmlidTo1MzliZGRjNy1hY2VmLTRjYWMtOTRiNy04NjRlZThhNjY5YTU=',
       },
-      body: {
-
-      }
     );
-    if(response.statusCode == 200) {
-      
-    }
   }
 }
