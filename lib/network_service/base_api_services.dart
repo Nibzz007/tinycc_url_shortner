@@ -3,4 +3,5 @@ abstract class BaseApiServices {
   Future<dynamic> readUrl();
   Future<dynamic> createUrl();
   Future<dynamic> deleteUrl();
+  Future<dynamic> editUrl();
 }
