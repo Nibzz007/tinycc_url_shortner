@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Icon(Icons.computer),
       ),
@@ -29,10 +29,12 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 goToHome(context) async {
-  await Future.delayed(Duration(seconds: 3))
-      .then((value) => Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LoginScreen(),
-          )));
+  await Future.delayed(const Duration(seconds: 3)).then(
+    (value) => Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LoginScreen(),
+      ),
+    ),
+  );
 }
