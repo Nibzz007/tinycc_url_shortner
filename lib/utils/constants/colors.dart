@@ -7,4 +7,5 @@ class AppColor {
   static const kBlue = Colors.blue;
   static const labelTextColor = Colors.white54;
   static const homeBackColor = Color(0xFFEFF3F7);
+  static const drawerItemsIconColor = Color(0xFF5BC0DE);
 }
