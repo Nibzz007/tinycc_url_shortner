@@ -4,11 +4,12 @@ import 'package:tinycc_app/utils/constants/sizes.dart';
 import 'package:tinycc_app/utils/constants/style.dart';
 import 'package:get/get.dart';
 import 'package:tinycc_app/view/account_view/account_screen.dart';
+import '../../model/account_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, required this.authValue});
+  HomeScreen({super.key, required this.account});
 
-  String? authValue;
+  TinyccAccountModel? account;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +23,17 @@ class HomeScreen extends StatelessWidget {
             children: [
               AppSize.kHeight30,
               ListTile(
-                title: Text(
+                title: const Text(
                   'Account',
                   style: AppStyle.drawerItemTextStyle,
                 ),
                 onTap: () => Get.to(
-                  () => AccountScreen(),
+                  () => const AccountScreen(),
                 ),
-                trailing: Icon(Icons.account_box_rounded,color: AppColor.drawerItemsIconColor,),
+                trailing: const Icon(
+                  Icons.account_box_rounded,
+                  color: AppColor.drawerItemsIconColor,
+                ),
               )
             ],
           ),
@@ -48,7 +52,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '$authValue',
+              '${account?.account.username}',
             ),
           ],
         ),

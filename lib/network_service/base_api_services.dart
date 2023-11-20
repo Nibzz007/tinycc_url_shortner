@@ -1,5 +1,5 @@
 abstract class BaseApiServices {
-  Future<dynamic> getAccountDetails();
+  Future<dynamic> getAccountDetails(String? auth);
   Future<dynamic> readUrl();
   Future<dynamic> createUrl();
   Future<dynamic> deleteUrl();

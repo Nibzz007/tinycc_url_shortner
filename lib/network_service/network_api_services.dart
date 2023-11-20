@@ -12,19 +12,18 @@ import 'package:http/http.dart' as http;
 
 class NetworkApiServices extends BaseApiServices {
   @override
-  Future<Account?> getAccountDetails() async {
+  Future<TinyccAccountModel?> getAccountDetails(String? auth) async {
     Uri url = Uri.parse(Apis.getAccountDetails);
     final response = await http.get(
       url,
       headers: {
-        'Authorization':
-            'Basic bmlidTo1MzliZGRjNy1hY2VmLTRjYWMtOTRiNy04NjRlZThhNjY5YTU=',
+        'Authorization': '$auth',
       },
     );
     if (response.statusCode == 200) {
       log(response.body);
       final json = jsonDecode(response.body);
-      final accountModel = Account.fromJson(json);
+      final accountModel = TinyccAccountModel.fromJson(json);
       return accountModel;
     }
     return null;

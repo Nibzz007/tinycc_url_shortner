@@ -12,10 +12,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    NetworkApiServices a = NetworkApiServices();
-    a.readUrl();
-    goToHome(context);
     super.initState();
+     goToHome(context);
   }
 
   @override

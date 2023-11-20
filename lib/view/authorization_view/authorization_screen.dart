@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tinycc_app/network_service/network_api_services.dart';
 import 'package:tinycc_app/utils/common_widgets/outline_input_button_widget.dart';
 import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
 import 'package:tinycc_app/utils/constants/colors.dart';
@@ -45,13 +47,22 @@ class AuthorizationScreen extends StatelessWidget {
                     children: [
                       OutlinedButtonWidget(
                         text: 'Show account',
-                        onPressed: () {
+                        onPressed: () async {
                           if (!authorizationViewModel.formKey.currentState!
                               .validate()) {
                             return;
                           }
-                          final auth = authorizationViewModel.authenticationHeaderController.text.trim();
-                          Get.off(() => HomeScreen(authValue: auth,));
+                          final auth = authorizationViewModel
+                              .authenticationHeaderController.text
+                              .trim();
+                          final account = await NetworkApiServices()
+                              .getAccountDetails(auth);
+                              log(account!.account.username);
+                          Get.off(
+                            () => HomeScreen(
+                              account: account,
+                            ),
+                          );
                         },
                       ),
                     ],

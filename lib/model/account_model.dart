@@ -32,7 +32,7 @@ class TinyccAccountModel {
 }
 
 class Account {
-  String userId;
+  String? userId;
   String username;
   Counters counters;
   Links links;
@@ -45,7 +45,7 @@ class Account {
   });
 
   factory Account.fromJson(Map<String, dynamic> json) => Account(
-        userId: json["user_id"],
+        userId: json["user_id"].toString(),
         username: json["username"],
         counters: Counters.fromJson(json["counters"]),
         links: Links.fromJson(json["links"]),
