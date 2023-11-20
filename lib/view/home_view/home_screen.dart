@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tinycc_app/utils/constants/colors.dart';
+import 'package:tinycc_app/utils/constants/style.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,10 +9,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.homeBackColor,
       appBar: AppBar(
-        title: Text('tinycc'),
+        title: const Text(
+          'TINY',
+          style: AppStyle.homeAppBarTextStyle,
+        ),
       ),
-      body: Column(),
+      body: const Column(),
     );
   }
 }

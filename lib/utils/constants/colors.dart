@@ -6,4 +6,5 @@ class AppColor {
   static const kGrey = Colors.black;
   static const kBlue = Colors.blue;
   static const labelTextColor = Colors.white54;
+  static const homeBackColor = Color(0xFFEFF3F7);
 }

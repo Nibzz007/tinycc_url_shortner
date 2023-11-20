@@ -9,16 +9,24 @@ class AppStyle {
     fontWeight: FontWeight.bold,
   );
   // TextFormField head style
-  static const textFormFIeldheadStyle = TextStyle(
-    color: AppColor.kWhite,
-    fontSize: 16
-  );
+  static const textFormFIeldheadStyle =
+      TextStyle(color: AppColor.kWhite, fontSize: 16);
+  // TextFormField textStyle
+  static const textFormFieldTextStyle = TextStyle(color: AppColor.kWhite);
   // TextFormField labelText style
   static const labelTextStyle = TextStyle(
     color: AppColor.labelTextColor,
     fontSize: 13,
-    fontWeight: FontWeight.w300
+    fontWeight: FontWeight.w300,
   );
   // Button style
-  static const buttonStyle = TextStyle(color: AppColor.kWhite,);
+  static const buttonStyle = TextStyle(
+    color: AppColor.kWhite,
+  );
+  // Home Screen
+  static const homeAppBarTextStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 3,
+  );
 }
