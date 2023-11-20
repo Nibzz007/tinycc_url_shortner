@@ -10,7 +10,7 @@ import 'package:tinycc_app/view_model/authorization_view_model.dart/authorizatio
 class AuthorizationScreen extends StatelessWidget {
   const AuthorizationScreen({super.key});
 
- // final AuthorizationViewModel authorizationViewModel  = Get.put(AuthorizationViewModel());
+  // final AuthorizationViewModel authorizationViewModel  = Get.put(AuthorizationViewModel());
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +28,32 @@ class AuthorizationScreen extends StatelessWidget {
                 children: [
                   TextFormFieldWIdget(
                     validator: (value) {
-                      if(value == null || value.isEmpty) {
+                      if (value == null || value.isEmpty) {
                         return 'This field is required';
-                      } else if(value.length < 62) {
+                      } else if (value.length < 62) {
                         return 'Enter correct authentication credentials';
                       }
                       return null;
                     },
                     keyboardType: TextInputType.text,
                     labelText: 'Enter Authentication-Header',
-                    controller: authorizationViewModel.authenticationHeaderController,
+                    controller:
+                        authorizationViewModel.authenticationHeaderController,
                   ),
                   AppSize.kHeight30,
                   Row(
                     children: [
                       OutlinedButtonWidget(
-                          text: 'Show account',
-                          onPressed: () {
-                            if(!authorizationViewModel.formKey.currentState!.validate()) {
-                              return;
-                            }
-                            Get.off(()=> const HomeScreen());
-                          }),
+                        text: 'Show account',
+                        onPressed: () {
+                          if (!authorizationViewModel.formKey.currentState!
+                              .validate()) {
+                            return;
+                          }
+                          final auth = authorizationViewModel.authenticationHeaderController.text.trim();
+                          Get.off(() => HomeScreen(authValue: auth,));
+                        },
+                      ),
                     ],
                   )
                 ],
