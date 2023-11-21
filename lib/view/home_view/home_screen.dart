@@ -7,9 +7,10 @@ import 'package:tinycc_app/view/account_view/account_screen.dart';
 import '../../model/account_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, required this.account});
+  HomeScreen({super.key, required this.account,this.auth});
 
   TinyccAccountModel? account;
+  String? auth;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,9 @@ class HomeScreen extends StatelessWidget {
                   style: AppStyle.drawerItemTextStyle,
                 ),
                 onTap: () => Get.to(
-                  () => const AccountScreen(),
+                  () => AccountScreen(
+                    account: account,
+                  ),
                 ),
                 trailing: const Icon(
                   Icons.account_box_rounded,
@@ -45,6 +48,12 @@ class HomeScreen extends StatelessWidget {
           'TINY',
           style: AppStyle.homeAppBarTextStyle,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),

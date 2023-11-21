@@ -13,109 +13,111 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kBlack,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppSize.kHeight20,
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios_new,
-                  color: AppColor.kWhite,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppSize.kHeight20,
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new,
+                    color: AppColor.kWhite,
+                  ),
+                  iconSize: 18,
                 ),
-                iconSize: 18,
+              ],
+            ),
+            AppSize.kHeight10,
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppSize.kHeight50,
+                  const Text(
+                    'Sign Up',
+                    style: AppStyle.loginTextStyle,
+                  ),
+                  AppSize.kHeight50,
+                  TextFormFieldWIdget(
+                    keyboardType: TextInputType.name,
+                    labelText: 'Enter your name',
+                  ),
+                  AppSize.kHeight20,
+                  TextFormFieldWIdget(
+                    keyboardType: TextInputType.emailAddress,
+                    labelText: 'Enter your email address',
+                  ),
+                  AppSize.kHeight20,
+                  TextFormFieldWIdget(
+                    keyboardType: TextInputType.text,
+                    labelText: 'Enter a password',
+                  ),
+                  AppSize.kHeight20,
+                  TextFormFieldWIdget(
+                    keyboardType: TextInputType.text,
+                    labelText: 'Confirm password',
+                  ),
+                  AppSize.kHeight20,
+                ],
               ),
-            ],
-          ),
-          AppSize.kHeight10,
-          Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppSize.kHeight50,
-                const Text(
-                  'Sign Up',
-                  style: AppStyle.loginTextStyle,
-                ),
-                AppSize.kHeight50,
-                TextFormFieldWIdget(
-                  keyboardType: TextInputType.name,
-                  labelText: 'Enter your name',
-                ),
-                AppSize.kHeight20,
-                TextFormFieldWIdget(
-                  keyboardType: TextInputType.emailAddress,
-                  labelText: 'Enter your email address',
-                ),
-                AppSize.kHeight20,
-                TextFormFieldWIdget(
-                  keyboardType: TextInputType.text,
-                  labelText: 'Enter a password',
-                ),
-                AppSize.kHeight20,
-                TextFormFieldWIdget(
-                  keyboardType: TextInputType.text,
-                  labelText: 'Confirm password',
-                ),
-                AppSize.kHeight20,
-              ],
             ),
-          ),
-          AppSize.kHeight50,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Row(
-              children: [
-                OutlinedButtonWidget(
-                  text: 'Sign Up',
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                        context,
+            AppSize.kHeight50,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                children: [
+                  OutlinedButtonWidget(
+                    text: 'Sign Up',
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                          (route) => false);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            AppSize.kHeight30,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Already have an account ?',
+                    style: TextStyle(color: AppColor.kWhite),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
+                          builder: (context) => const LoginScreen(),
                         ),
-                        (route) => false);
-                  },
-                ),
-              ],
-            ),
-          ),
-          AppSize.kHeight30,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Already have an account ?',
-                  style: TextStyle(color: AppColor.kWhite),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
+                      );
+                    },
+                    child: const Text(
+                      'Log in',
+                      style: TextStyle(
+                        color: AppColor.kBlue,
+                        decoration: TextDecoration.underline,
+                        decorationColor: AppColor.kBlue,
                       ),
-                    );
-                  },
-                  child: const Text(
-                    'Log in',
-                    style: TextStyle(
-                      color: AppColor.kBlue,
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppColor.kBlue,
                     ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
