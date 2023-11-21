@@ -61,6 +61,7 @@ class AuthorizationScreen extends StatelessWidget {
                           Get.off(
                             () => HomeScreen(
                               account: account,
+                              auth: auth,
                             ),
                           );
                         },
