@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tinycc_app/network_service/network_api_services.dart';
+import 'package:tinycc_app/utils/constants/colors.dart';
+import 'package:tinycc_app/utils/constants/images_string.dart';
 import 'package:tinycc_app/view/login_view/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,15 +14,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-     goToHome(context);
+    goToHome(context);
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: AppColor.homeBackColor,
       body: Center(
-        child: Icon(Icons.computer),
-      ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(AppImages.splashImage1),
+          Image.asset(AppImages.splashImage2),
+        ],
+      )),
     );
   }
 }

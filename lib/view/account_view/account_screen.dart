@@ -1,68 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:tinycc_app/network_service/network_api_services.dart';
+import 'package:get/route_manager.dart';
 import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
+import 'package:tinycc_app/view/account_view/widgets/row_container_widget.dart';
 import '../../model/account_model.dart';
 
-class AccountScreen extends StatefulWidget {
+class AccountScreen extends StatelessWidget {
   AccountScreen({
     super.key,
     required this.account,
-    this.auth
+    this.auth,
   });
 
   final TinyccAccountModel? account;
   String? auth;
 
   @override
-  State<AccountScreen> createState() => _AccountScreenState();
-}
-
-class _AccountScreenState extends State<AccountScreen> {
-  int? updatedApiCallsCount;
-  @override
   Widget build(BuildContext context) {
-    final accountDetails = widget.account?.account;
+    final accountDetails = account?.account;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColor.homeBackColor,
       appBar: AppBar(
         title: Text(
           'Hello, ${accountDetails?.username.toUpperCase()}',
         ),
-        actions: [
-          //! Not Working properly
-          IconButton(
-            onPressed: () async {
-               var updatedAccount = await NetworkApiServices().getAccountDetails(widget.auth);
-               setState(() {
-                 updatedApiCallsCount = updatedAccount!.account.counters.todayApiCalls.count;
-               });
-            },
-            icon: const Icon(Icons.refresh_sharp),
-          ),
-        ],
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_sharp,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             AppSize.kHeight10,
-            Text('User Id : ${accountDetails!.userId.toString()}'),
-            AppSize.kHeight20,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Total Urls ${accountDetails.counters.urls.count}'),
-                Text('Url Limit ${accountDetails.counters.urls.limit}'),
-              ],
+            Container(
+              height: height * 0.05,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: AppColor.kWhite,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Center(
+                child: Text(
+                  'User Id : ${accountDetails!.userId.toString()}',
+                ),
+              ),
             ),
             AppSize.kHeight20,
-            Text('Version ${widget.account?.version}'),
+            containerRow(height, width, accountDetails),
             AppSize.kHeight20,
-            const Text('Daily API calls'),
-
-            Text('Count ${updatedApiCallsCount ?? accountDetails.counters.todayApiCalls.count}'),
+            Text('Version ${account?.version}'),
           ],
         ),
       ),
