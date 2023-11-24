@@ -22,13 +22,14 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: AppColor.homeBackColor,
       body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(AppImages.splashImage1),
-          Image.asset(AppImages.splashImage2),
-        ],
-      )),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(AppImages.splashImage1),
+            Image.asset(AppImages.splashImage2),
+          ],
+        ),
+      ),
     );
   }
 }
