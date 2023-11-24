@@ -24,21 +24,21 @@ class AppStyle {
   );
 
   // TextFormField labelText style
-  
+
   static const labelTextStyle = TextStyle(
     color: AppColor.labelTextColor,
     fontSize: 13,
     fontWeight: FontWeight.w300,
   );
-  
+
   // Button style
-  
+
   static const buttonStyle = TextStyle(
     color: AppColor.kWhite,
   );
-  
+
   // Home Screen
-  
+
   static const homeAppBarTextStyle = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
@@ -48,4 +48,17 @@ class AppStyle {
   // Drawer Style
 
   static const drawerItemTextStyle = TextStyle(fontSize: 20);
+
+  // Account Screen
+
+  static const rowContainerHeadStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w900,
+    letterSpacing: 1.5,
+  );
+  static const rowContainerItemsStyle = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1,
+  );
 }

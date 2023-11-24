@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
                   () => AccountScreen(
                     account: account,
                   ),
+                  transition: Transition.cupertino
                 ),
                 trailing: const Icon(
                   Icons.account_box_rounded,
