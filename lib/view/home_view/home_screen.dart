@@ -5,6 +5,7 @@ import 'package:tinycc_app/utils/constants/style.dart';
 import 'package:get/get.dart';
 import 'package:tinycc_app/view/account_view/account_screen.dart';
 import '../../model/account_model.dart';
+import '../../utils/constants/images_string.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key, required this.account,this.auth});
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Drawer(
@@ -38,16 +40,18 @@ class HomeScreen extends StatelessWidget {
                   Icons.account_box_rounded,
                   color: AppColor.drawerItemsIconColor,
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
       backgroundColor: AppColor.homeBackColor,
       appBar: AppBar(
-        title: const Text(
-          'TINY',
-          style: AppStyle.homeAppBarTextStyle,
+        title: Row(
+          children: [
+            Image.asset(AppImages.splashImage1,height: height * 0.03),
+            Image.asset(AppImages.splashImage2,height: height * 0.03),
+          ],
         ),
         actions: [
           IconButton(
