@@ -12,8 +12,6 @@ import 'package:tinycc_app/view_model/authorization_view_model.dart/authorizatio
 class AuthorizationScreen extends StatelessWidget {
   const AuthorizationScreen({super.key});
 
-  // final AuthorizationViewModel authorizationViewModel  = Get.put(AuthorizationViewModel());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +55,6 @@ class AuthorizationScreen extends StatelessWidget {
                               .trim();
                           final account = await NetworkApiServices()
                               .getAccountDetails(auth);
-                              log(account!.account.username);
                           Get.off(
                             () => HomeScreen(
                               account: account,

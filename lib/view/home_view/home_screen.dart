@@ -60,14 +60,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
+      body: const Padding(
+        padding: EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '${account?.account.username}',
-            ),
+           
           ],
         ),
       ),
