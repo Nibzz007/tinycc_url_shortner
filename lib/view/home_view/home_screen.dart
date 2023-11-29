@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tinycc_app/utils/common_widgets/outline_input_button_widget.dart';
+import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
 import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
 import 'package:tinycc_app/utils/constants/style.dart';
@@ -8,7 +10,7 @@ import '../../model/account_model.dart';
 import '../../utils/constants/images_string.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, required this.account,this.auth});
+  HomeScreen({super.key, required this.account, this.auth});
 
   TinyccAccountModel? account;
   String? auth;
@@ -31,11 +33,10 @@ class HomeScreen extends StatelessWidget {
                   style: AppStyle.drawerItemTextStyle,
                 ),
                 onTap: () => Get.to(
-                  () => AccountScreen(
-                    account: account,
-                  ),
-                  transition: Transition.cupertino
-                ),
+                    () => AccountScreen(
+                          account: account,
+                        ),
+                    transition: Transition.cupertino),
                 trailing: const Icon(
                   Icons.account_box_rounded,
                   color: AppColor.drawerItemsIconColor,
@@ -49,8 +50,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            Image.asset(AppImages.splashImage1,height: height * 0.03),
-            Image.asset(AppImages.splashImage2,height: height * 0.03),
+            Image.asset(AppImages.splashImage1, height: height * 0.03),
+            Image.asset(AppImages.splashImage2, height: height * 0.03),
           ],
         ),
         actions: [
@@ -60,12 +61,19 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(15),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           
+            TextFormFieldWIdget(
+              keyboardType: TextInputType.text,
+              labelText: 'Shorten URL',
+            ),
+            OutlinedButtonWidget(
+              text: 'Shorten URL',
+              onPressed: () {},
+            ),
           ],
         ),
       ),
