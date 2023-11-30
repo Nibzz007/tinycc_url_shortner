@@ -50,11 +50,12 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   OutlinedButtonWidget(
                     text: 'Login',
+                    style: AppStyle.buttonStyle,
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AuthorizationScreen(),
+                          builder: (context) => const AuthorizationScreen(),
                         ),
                       );
                     },
@@ -77,6 +78,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   OutlinedButtonWidget(
                     text: 'Login with OTP',
+                    style: AppStyle.buttonStyle,
                     onPressed: () {},
                   ),
                 ],

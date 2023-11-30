@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tinycc_app/utils/common_widgets/outline_input_button_widget.dart';
-import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
 import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
 import 'package:tinycc_app/utils/constants/style.dart';
@@ -64,15 +63,46 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextFormFieldWIdget(
-              keyboardType: TextInputType.text,
-              labelText: 'Shorten URL',
+            Text(
+              "Hello, ${account!.account.username.toUpperCase()}",
             ),
-            OutlinedButtonWidget(
-              text: 'Shorten URL',
-              onPressed: () {},
+            Row(
+              children: [
+                OutlinedButtonWidget(
+                  text: 'Shorten URL',
+                  style: AppStyle.homeScreenButtonStyle,
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        backgroundColor: AppColor.kWhite,
+                        title: const Text('Shorten URLs'),
+                        content: SizedBox(
+                          height: 50,
+                          width: double.infinity,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: 'Paste a Big URL here...',
+                              hintStyle: AppStyle.hintTextStyle,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ),
+                        ),
+                        actions: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: const Text('Shorten it!'),
+                          ),
+                        ],
+                        actionsAlignment: MainAxisAlignment.center,
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
