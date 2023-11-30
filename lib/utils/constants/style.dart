@@ -31,7 +31,7 @@ class AppStyle {
     fontWeight: FontWeight.w300,
   );
 
-  // Button style
+  // Login and Sign up screen Button style
 
   static const buttonStyle = TextStyle(
     color: AppColor.kWhite,
@@ -43,6 +43,14 @@ class AppStyle {
     fontSize: 30,
     fontWeight: FontWeight.bold,
     letterSpacing: 3,
+  );
+
+  static const homeScreenButtonStyle = TextStyle(
+    color: AppColor.kBlack
+  );
+
+  static const hintTextStyle = TextStyle(
+    color: Colors.black26
   );
 
   // Drawer Style

@@ -6,6 +6,7 @@ import 'package:tinycc_app/utils/common_widgets/outline_input_button_widget.dart
 import 'package:tinycc_app/utils/common_widgets/textform_field_widget.dart';
 import 'package:tinycc_app/utils/constants/colors.dart';
 import 'package:tinycc_app/utils/constants/sizes.dart';
+import 'package:tinycc_app/utils/constants/style.dart';
 import 'package:tinycc_app/view/home_view/home_screen.dart';
 import 'package:tinycc_app/view_model/authorization_view_model.dart/authorization_view_model.dart';
 
@@ -45,6 +46,7 @@ class AuthorizationScreen extends StatelessWidget {
                     children: [
                       OutlinedButtonWidget(
                         text: 'Show account',
+                        style: AppStyle.buttonStyle,
                         onPressed: () async {
                           if (!authorizationViewModel.formKey.currentState!
                               .validate()) {

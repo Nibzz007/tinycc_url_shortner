@@ -74,11 +74,12 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   OutlinedButtonWidget(
                     text: 'Sign Up',
+                    style: AppStyle.buttonStyle,
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
+                            builder: (context) => const LoginScreen(),
                           ),
                           (route) => false);
                     },
