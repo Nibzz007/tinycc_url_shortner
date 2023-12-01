@@ -5,4 +5,7 @@ class AuthorizationViewModel extends GetxController {
   TextEditingController authenticationHeaderController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   
+  void _setAuthDetail() async {
+    
+  }
 }
