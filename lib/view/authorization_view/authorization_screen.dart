@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tinycc_app/network_service/network_api_services.dart';
@@ -55,6 +54,8 @@ class AuthorizationScreen extends StatelessWidget {
                           final auth = authorizationViewModel
                               .authenticationHeaderController.text
                               .trim();
+                          authorizationViewModel.setAuthDetail(
+                              'auth_token', auth);
                           final account = await NetworkApiServices()
                               .getAccountDetails(auth);
                           Get.off(
@@ -66,7 +67,7 @@ class AuthorizationScreen extends StatelessWidget {
                         },
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             );
