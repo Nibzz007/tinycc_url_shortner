@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:tinycc_app/view/home_view/home_screen.dart';
 import 'package:tinycc_app/view/login_view/login_screen.dart';
 import 'package:tinycc_app/view_model/authorization_view_model.dart/authorization_view_model.dart';
 
